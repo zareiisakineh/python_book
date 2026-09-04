@@ -3,6 +3,32 @@
 # TODO: Read name, age and monthly salary for three people
 #       Use int() for age and float() for salary
 
+navn1 = input("Hva heter du? ")
+alder1 = int(input("Hvor gammel er du? "))
+inntekt1 = float(input("Hvor mye tjener du hver måned? "))
+
+navn2 = input("Hva heter du? ")
+alder2 = int(input("Hvor gammel er du? "))
+inntekt2 = float(input("Hvor mye tjener du hver måned? "))
+
+navn3 = input("Hva heter du? ")
+alder3 = int(input("Hvor gammel er du? "))
+inntekt3 = float(input("Hvor mye tjener du hver måned? "))
+
+print(f"{'navn':20}{'alder':6}{'inntekt':>18}")
+print(f"{navn1:20}{alder1:6}{inntekt1:>18}")
+print(f"{navn2:20}{alder2:6}{inntekt2:>18}")
+print(f"{navn3:20}{alder3:6}{inntekt3:>18}")
+
+navn_width = 20
+alder_width = 6
+inntekt_width = 18
+
+print(f"{'navn':{navn_width}} {'alder':{alder_width}} {'månedintekt':>{inntekt_width}}")
+print(f"{navn1:{navn_width}}{alder1:{alder_width}}{inntekt1:{inntekt_width},.2f}")
+print(f"{navn2:{navn_width}}{alder2:{alder_width}}{inntekt2:{inntekt_width},.2f}")
+print(f"{navn3:{navn_width}}{alder3:{alder_width}}{inntekt3:{inntekt_width},.2f}")
+
 # TODO: Print a header row with three columns: Name, Age, Monthly salary
 #       Use f-string field widths to align the columns
 #       Hint: text columns default to left-aligned, number columns to right-aligned
