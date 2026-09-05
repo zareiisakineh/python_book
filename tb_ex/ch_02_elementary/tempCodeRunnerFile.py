@@ -1,1 +1,1 @@
-der':{a
+tekst
