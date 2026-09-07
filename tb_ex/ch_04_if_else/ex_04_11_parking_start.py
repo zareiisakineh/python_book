@@ -6,12 +6,6 @@ out the fee and print it. Watch the mixed conditions - above all a car
 that is BOTH weekend and electric (it must get both discounts).
 """
 
-# ---- input (ready-made, do not change) ----
-start_hour = int(input("Start hour (0-23): "))
-duration_min = int(input("Duration in minutes: "))
-weekend = input("Weekend? (y/n): ").strip().lower().startswith("y")
-electric = input("Electric vehicle? (y/n): ").strip().lower().startswith("y")
-disability = input("Disability permit? (y/n): ").strip().lower().startswith("y")
 
 # ---- your logic below ----
 # 1) hourly rate from start_hour:   08-18 is 30,   18-22 is 15,   else 0
@@ -22,3 +16,50 @@ disability = input("Disability permit? (y/n): ").strip().lower().startswith("y")
 #               so use two separate 'if's, not an if/elif chain
 # 6) cap the fee at 250 (maximum for the session)
 # 7) print:  f"Parking fee: {cost:.2f}"
+
+# ---- input (ready-made, do not change) ----
+start_hour = int(input("Start hour (0-23): "))
+duration_min = int(input("Duration in minutes: "))
+weekend = input("Weekend? (y/n): ").strip().lower().startswith("y")
+electric = input("Electric vehicle? (y/n): ").strip().lower().startswith("y")
+disability = input("Disability permit? (y/n): ").strip().lower().startswith("y")
+
+
+# 1) hourly rate from start_hour:
+
+if 8 <= start_hour < 18:
+    hourly_rate = 30
+elif 18 <= start_hour < 22:
+    hourly_rate = 30 * 0.5
+else:
+    hourly_rate = 0
+    
+# 2) free_minutes:
+
+if  disability:
+    free_minutes = 360
+else:
+    free_minutes = 15
+
+# 3) billable
+
+billable = duration_min - free_minutes
+if billable < 0:
+    billable = 0
+
+# 4) cost
+
+cost = hourly_rate * billable / 60
+
+# 5) discounts:
+
+if weekend:
+    cost = cost * 0.5
+if electric:
+      cost = cost * 0.5
+if cost > 250:
+    cost = 250
+
+# 7) print:
+
+print(f"Parking fee: {cost:.2f} kroner")

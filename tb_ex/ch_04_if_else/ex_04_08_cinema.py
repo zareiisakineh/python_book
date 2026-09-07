@@ -1,6 +1,6 @@
 # file: ex_04_08_cinema.py
 
-age     = int(input("Age: "))
+age = int(input("Age: "))
 tickets = int(input("Number of tickets: "))
 evening = input("Evening screening? (yes/no): ").strip().lower() == "yes"
 
