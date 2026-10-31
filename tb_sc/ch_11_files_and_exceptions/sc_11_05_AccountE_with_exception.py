@@ -122,7 +122,7 @@ class AccountE:
 if __name__ == "__main__":
 
     try:
-        account1 = AccountE(123, 456, 1000, 2.5)
+        account1 = AccountE(123, 456, 6000, 2.5)
         account1.deposit(500)
         account1.withdraw(200)
         account1.withdraw(2000)

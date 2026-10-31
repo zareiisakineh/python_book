@@ -8,11 +8,12 @@ VALUES = ["2", "3", "4", "5", "6", "7", "8", "9", "10",
 class Card:
     def __init__(self, suit, value):
         # TODO: store _suit and _value
-        pass
+        self._suit = suit
+        self._value = value
 
     def __str__(self):
         # TODO: return e.g. "Ace of Spades"
-        pass
+        return f"{self._value} av {self._suit}"
 
     def __repr__(self):
         return self.__str__()
@@ -20,30 +21,37 @@ class Card:
 
 class Deck:
     def __init__(self):
+        self._card = []
         # TODO: create all 52 cards using nested loops over SUITS and VALUES
+        for suit in SUITS:
+            for value in VALUES:
         # Store them in self._cards as a list
-        pass
+                 self._card.append(Card(suit, value))
 
     def shuffle(self):
         # TODO: shuffle _cards in place using random.shuffle
-        pass
+         random.shuffle(self._card)
 
     def draw(self):
         # TODO: remove and return the top card (index 0)
         # Raise IndexError if the deck is empty
-        pass
+        if len(self._card) == 0:
+            raise IndexError("Dekk is empty")
+        else:
+            return self._card.pop(0)
 
     def __len__(self):
         # TODO: return number of remaining cards
-        pass
+        return len(self._card)
 
     def __getitem__(self, index):
         # TODO: return card at given index
-        pass
+        return self._card[index]
+        
 
     def __str__(self):
         # TODO: return e.g. "Deck: 52 cards"
-        pass
+        return f"Dekk: {len(self._card)} cards"
 
 
 if __name__ == "__main__":

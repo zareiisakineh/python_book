@@ -26,15 +26,32 @@ def get_longitude(position):
 
 # TODO: Print a header showing the number of positions.
 #       Example: "GPS log - 10 positions:"
+print(f"GPS log - {len(track)} positions:")
 
 # TODO: Use tuple unpacking to process and display all positions.
 #       Follow the coordinate/output requirements in the exercise.
-
+for position in track:
+    latitude, longitude, by = get_latitude(position), get_longitude(position), position[2]
+    print(f"{latitude:>8}  {longitude:>12}   {by:<12}")
+ 
 # TODO: Find and print the northernmost place.
 #       Use max() or min() with the appropriate key function.
+
+northernmost = max(track, key = get_latitude)
+print(f"northernmost place er: {northernmost}")
 
 # TODO: Find and print the southernmost place.
 #       Use max() or min() with the appropriate key function.
 
+southernmost = min(track, key = get_latitude)
+print(f"southernmost place er: {southernmost}")
+
 # TODO: Find and print the westernmost place.
 #       Use max() or min() with the appropriate key function.
+
+westernmost = min(track, key = get_longitude)
+print(f"westernmost place er: {westernmost}")
+
+
+oesternmost = max(track, key = get_longitude)
+print(f"Østernmost place er: {oesternmost}")

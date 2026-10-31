@@ -9,7 +9,8 @@ number = int(input("Enter a positive integer: "))
 #             number //= 2 removes that digit
 #             Prepend each digit to build the result string
 #             Stop when number becomes 0
-
+while number > 0:
+    
 # TODO: Print your manual result and verify with bin()
 #       Example:
 #       "Binary (manual):   1010101101101"

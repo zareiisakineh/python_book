@@ -7,7 +7,7 @@ digits = input("Skriv ISBN, 9 siffer ")
 #                 total += int(char) * (i + 1)
 #       The weight for the first digit is 1, second is 2, ..., ninth is 9
 for i, char in enumerate(digits):
-   
+    total += int(char) * (i + 1)
     print(i, char)
 # TODO: Determine the check character
 #       If checksum == 10: check character is 'X'

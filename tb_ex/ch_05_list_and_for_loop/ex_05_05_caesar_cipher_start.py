@@ -7,16 +7,23 @@ def encode(text, shift):
     result = []
     for char in text:
         if char.isalpha():
+            if char.islower():
+                shifted = (ord(char) - ord('a') + shift) % 26
+                new_char = chr(shifted + ord('a'))
+            else:
+                shifted = (ord(char) - ord('A') + shift) % 26
+                new_char = chr(shifted + ord('A'))
+            result.append(new_char)
             # TODO: Shift the character by 'shift' positions
             #       Handle uppercase and lowercase separately
             #       Use wraparound with modulo 26
             #       Hint for lowercase:
             #         shifted = (ord(char) - ord('a') + shift) % 26
-            #         new_char = chr(shifted + ord('a'))
-            pass
+            #         new_char = chr(shifted + ord('a'))  
         else:
+            result.append(char)
             # TODO: Keep non-letter characters unchanged
-            pass
+        
     return ''.join(result)
 
 def decode(text, shift):

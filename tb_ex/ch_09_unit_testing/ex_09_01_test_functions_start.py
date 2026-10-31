@@ -14,7 +14,7 @@
 
 # Replace each TODO assertion with a meaningful test.
 # The unfinished tests deliberately fail.
-import pytest
+#import pytest
 
 # SIMPLE APPROACH USED IN THE BOOK:
 # Copy these completed files from ../ch_06_functions/
@@ -35,13 +35,13 @@ import pytest
 #     os.path.join(os.path.dirname(__file__), '..', 'ch_06_functions')
 # )
 
-from ex_06_01_taxi_fare import taxi_fare
-from ex_06_06_ordinal_numbers import ordinal
+from ex_taxi_fare_testing import taxi_fare
+from ex_ordinal_numbers_testing import ordinal
 
 
 def test_zero_distance():
     # TODO: 0 km should return the base fare of $4.00
-    assert False, "Complete this test"
+    assert taxi_fare(0) == 4.00
 
 
 def test_known_value():

@@ -3,31 +3,33 @@
 class Rectangle:
     def __init__(self, width, height):
         # TODO: store _width and _height
-        pass
+      self._width = width
+      self._height = height
 
     def area(self):
         # TODO: return the area
-        pass
+        return self._width * self._height
 
     def perimeter(self):
         # TODO: return the perimeter
-        pass
+        return (self._width + self._height) * 2
 
     def is_square(self):
         # TODO: return whether the rectangle is a square
-        pass
+        return self._width == self._height
+             
 
     def __str__(self):
         # TODO: return e.g. "Rectangle(width=10, height=5)"
-        pass
+        return f"Rekrangel(width={self._width}, height={self._height})"
 
     def __eq__(self, other):
         # TODO: two rectangles are equal if they have the same area
-        pass
+        return self.area() == other.area()
 
     def __lt__(self, other):
         # TODO: a rectangle is less than another if its area is smaller
-        pass
+        return self.area() < other.area()
 
 
 if __name__ == "__main__":

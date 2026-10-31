@@ -15,7 +15,10 @@ grades = [
 # TODO: Print all grades using tuple unpacking
 #       for name, subject, grade in grades:
 #       Format: "  Alice    Math      B"
-
+print(f"name     subject     grade")
+for name, subject, grade in grades:
+    print(f"{name:<10} {subject:<10} {grade:<10}")
+    
 # TODO: Count grades per subject using get()
 #       counts[subject] = counts.get(subject, 0) + 1
 #       Print sorted by subject name
