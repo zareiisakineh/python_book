@@ -1,7 +1,6 @@
 # file: ex_10_02_employees.py
 from abc import ABC, abstractmethod
 
-
 class Employee(ABC):
     def __init__(self, name, employee_id):
         self._name           = name

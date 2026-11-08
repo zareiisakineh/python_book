@@ -114,20 +114,20 @@ class StudentRegister:
 # Uncomment it when you have implemented the classes and methods above.
 # You can then run the file to test your implementation.
 
-# reg = StudentRegister()
-# reg.add(Student("Alice Johnson", 1001, 3.9))
-# reg.add(Student("Bob Olsen", 1002, 2.8))
-# reg.add(Student("Clara Lee", 1003, 3.7))
-# reg.add(Student("David Park", 1004, 3.2))
+reg = StudentRegister()
+reg.add(Student("Alice Johnson", 1001, 3.9))
+reg.add(Student("Bob Olsen", 1002, 2.8))
+reg.add(Student("Clara Lee", 1003, 3.7))
+reg.add(Student("David Park", 1004, 3.2))
 #
-# print(f"Register has {len(reg)} students.\n")
+print(f"Register has {len(reg)} students.\n")
 #
-# print("Top 2 students:")
-# for s in reg.top_students(2):
-#     print(f"  {s}")
+print("Top 2 students:")
+for s in reg.top_students(2):
+     print(f"  {s}")
 #
-# print("\nSearch for 'o':")
-# for s in reg.find_by_name("o"):
-#     print(f"  {s}")
+print("\nSearch for 'o':")
+for s in reg.find_by_name("o"):
+    print(f"  {s}")
 #
-# print(f"\nTotal students created: {Student.get_count()}")
+print(f"\nTotal students created: {Student.get_count()}")

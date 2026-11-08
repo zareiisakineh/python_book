@@ -10,7 +10,7 @@
 #       Example: '"racecar" is a palindrome.'
 #                '"hello" is not a palindrome.'
 ord1 = input("Skriv et ord for å sjekke om det er palindrom: ")
-snu_ord1 = ord1[::-1]
+snu_ord1 = ord1[::-1]  #reverserer stringen ord1
 if ord1 == snu_ord1:
     print(f"{ord1} er en palindrom")
 else:

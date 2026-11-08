@@ -27,14 +27,14 @@ print(drop_ball(8))
 #       Hint: create a list of zeros, then for each ball call drop_ball()
 #             and increment the corresponding slot counter.
 def run_simulation(num_balls: int, num_rows: int) -> list:
-#Lager en liste av nuller:
-    counts = [0] * (num_rows + 1)
+
+    counts = [0] * (num_rows + 1) #Lager en liste av nuller:
 #  adderer hvert ball-fall til lista ved hjelp av funksjonen drop_ball(num_rows)
     for i in range(num_balls):
         slot = drop_ball(num_rows)
         counts[slot] += 1
-# reurnerer lista. Nå har vi en liste av slotene med antall baller i hver index
-    return counts
+
+    return counts  # reurnerer lista. Nå har vi en liste av slotene med antall baller i hver index
 
 # TODO: Write display_histogram(counts: list)
 #       Prints one row per slot showing the count and a bar of asterisks.
@@ -51,8 +51,9 @@ def display_histogram(counts: list):
 #       counts and slot numbers along the bottom**. Best viewed with a small
 #       number of balls, since the height equals the largest count.
 #       See the Extension section in the book for the approach.
+#for å simulere vertikal histogram må vi finne sloten som har maksimum antall stjerne
 def display_histogram_vertical(counts: list):
-# finner maksimum antall baller
+# finner maksimum antall baller i slot-listen
     maks_ant_baller = max(counts)
     print(f"maksimum antall baller: {maks_ant_baller}")
     print()
