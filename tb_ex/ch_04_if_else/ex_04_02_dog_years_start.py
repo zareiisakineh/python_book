@@ -1,7 +1,9 @@
 # file: ex_04_02_dog_years_start.py
 
 # TODO: Read the dog's age in human years from the user
-age_in_human_year = int(input("Skriv din hund sin alder i menneskeår"))
+human_age = int(input("Skriv din hund sin alder i menneskeår"))
+dog_age = 0
+if human_age <= 1:
 # TODO: Calculate the equivalent age in dog years using this model:
 #       - 1st human year = 10.5 dog years
 #       - 2nd human year = 10.5 dog years  (total: 21.0)
